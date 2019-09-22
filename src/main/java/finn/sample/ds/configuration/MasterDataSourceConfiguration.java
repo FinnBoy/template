@@ -23,6 +23,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.persistenceunit.PersistenceUnitManager;
 import org.springframework.orm.jpa.vendor.AbstractJpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.util.StringUtils;
 
 import javax.sql.DataSource;
@@ -39,6 +40,7 @@ import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.
 @EnableJpaRepositories(entityManagerFactoryRef = "masterEntityManagerFactory"
         , transactionManagerRef = "masterTransactionManager"
         , basePackages = {"finn.sample.ds.repository"})
+@EnableTransactionManagement
 public class MasterDataSourceConfiguration {
 
     @Autowired
