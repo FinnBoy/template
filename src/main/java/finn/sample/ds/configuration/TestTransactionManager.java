@@ -9,6 +9,8 @@ import org.springframework.transaction.support.AbstractPlatformTransactionManage
 import org.springframework.transaction.support.DefaultTransactionStatus;
 
 /**
+ * 事务管理器可以 override 的 method 如下，供参考
+ *
  * @author Finn Zhao
  * @version 2019-09-27
  */
