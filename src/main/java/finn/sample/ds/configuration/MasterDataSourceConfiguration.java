@@ -64,7 +64,7 @@ public class MasterDataSourceConfiguration {
     @ConfigurationProperties("app.datasources.master.configuration")
     public DataSource dataSource() {
         //return productionDataSource();
-        return embeddedDatabase();
+        return new TestDelegatingDataSource(embeddedDatabase());
     }
 
     @Bean

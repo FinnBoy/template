@@ -1,6 +1,7 @@
 package finn.sample.ds;
 
 import finn.sample.ds.service.SampleService;
+import finn.sample.ds.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -27,10 +28,11 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner demo(SampleService sampleService) {
+    public CommandLineRunner demo(SampleService sampleService, TestService testService) {
         return args -> {
             log.info("start");
-            sampleService.test();
+            // sampleService.test();
+            testService.execute();
             log.info("end");
         };
     }

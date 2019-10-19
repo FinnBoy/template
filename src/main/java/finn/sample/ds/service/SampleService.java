@@ -1,5 +1,6 @@
 package finn.sample.ds.service;
 
+import finn.sample.ds.configuration.DataSourceListProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ import java.sql.Statement;
 public class SampleService {
 
     private static final Logger log = LoggerFactory.getLogger(SampleService.class);
+
+    @Autowired
+    private DataSourceListProperties dataSourceListProperties;
 
     @Autowired
     private DataSource masterDataSource;
@@ -54,6 +58,10 @@ public class SampleService {
 
         log.info(masterDataSource.toString());
         log.info(slaveDataSource.toString());
+    }
+
+    public void setDataSourceListProperties(DataSourceListProperties dataSourceListProperties) {
+        this.dataSourceListProperties = dataSourceListProperties;
     }
 
     public void setMasterDataSource(DataSource masterDataSource) {
